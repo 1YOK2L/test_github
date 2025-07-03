@@ -49,8 +49,6 @@ for i in range(len(my_list)):
                 print([i, j])
                 found = True
                 break
-    if found:
-        break
 
 if not found:
     print("No valid pair found.")
