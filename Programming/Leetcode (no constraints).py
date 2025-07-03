@@ -39,14 +39,9 @@ for x in nums:
 found = False
 for i in range(len(my_list)):
     for j in range(i + 1, len(my_list)):
-        if isinstance(TGT, float):
-            if abs(my_list[i] + my_list[j] - TGT) <= 0:
-                print([i, j])
-                found = True
-        else:
-            if my_list[i] + my_list[j] == TGT:
-                print([i, j])
-                found = True
+        if my_list[i] + my_list[j] == TGT:
+            print([i, j])
+            found = True
 
 if not found:
     print("No valid pair found.")
