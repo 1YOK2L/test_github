@@ -14,7 +14,7 @@ while (x := input("Input > ")) != 'q':
             return False
     if isfloat(x) and not isint(x):
         x = float(x)
-    elif x.isnumeric or (x[0] == "-" and x[1:-1].isnumeric):
+    elif x.isnumeric or (x[0] == "-" and x[1:].isnumeric):
         x = int(x)
     y = x ** 2
     Square.append(y)
