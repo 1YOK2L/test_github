@@ -43,12 +43,10 @@ for i in range(len(my_list)):
             if abs(my_list[i] + my_list[j] - TGT) <= 0:
                 print([i, j])
                 found = True
-                break
         else:
             if my_list[i] + my_list[j] == TGT:
                 print([i, j])
                 found = True
-                break
 
 if not found:
     print("No valid pair found.")
