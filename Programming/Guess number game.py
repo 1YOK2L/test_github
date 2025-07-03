@@ -4,7 +4,7 @@ result = randint(1, 10)
 
 x = input("Guess a number: ")
 while x != result:
-    if x.isnumeric() or (x[0] == "-" and x[1:-1].isnumeric()):
+    if x.isnumeric() or (x[0] == "-" and x[1:].isnumeric()):
         x = int(x)
         if x > result:
             print("Too high")
