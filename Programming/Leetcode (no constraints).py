@@ -20,6 +20,8 @@ if not isfloat(TGT):
     print("Your input is invalid.")
     exit()
 
+TGT = float(TGT)
+
 my_list = []
 
 for x in nums:
@@ -38,7 +40,7 @@ found = False
 for i in range(len(my_list)):
     for j in range(i + 1, len(my_list)):
         if isinstance(TGT, float):
-            if abs(my_list[i] + my_list[j] - TGT) <= 1e-9:
+            if abs(my_list[i] + my_list[j] - TGT) <= 0:
                 print([i, j])
                 found = True
                 break
