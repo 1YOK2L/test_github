@@ -1,13 +1,13 @@
-nums = input("Enter a string: ").split(", ")
+nums = input("Enter a set of numbers: ").split(", ")
 TGT = input("Enter target number: ")
-my_list = []
-result = []
+
 def isfloat(s):
     try:
         float(s)
         return True
     except ValueError:
         return False
+
 def isint(s):
     try:
         int(s)
@@ -15,38 +15,54 @@ def isint(s):
     except ValueError:
         return False
 
-if isfloat(TGT):
-    TGT = float(TGT)
-    if TGT >= -10 ** 9 and TGT <= 10 ** 9:
-        if len(nums) >= 2 and len(nums) < 10 ** 4:
-            for x in nums:
-                if isfloat(x) and not isint(x):
-                    x = float(x)
-                elif x.isnumeric() or (x[0] == "-" and x[1:].isnumeric()):
-                    x = int(x)
-                my_list.append(x)
-                if x < -10 ** 9 or x > 10 ** 9:
-                    print("Number outside our bounds.")
-                    break
-            if isint(TGT):
-                TGT = int(TGT)
-            elif isfloat(TGT):
-                TGT = float(TGT)
-            for i in range(len(my_list)):
-                for j in range(len(my_list)):
-                    if i == j:
-                        continue
-                    else:
-                        n = my_list[i] + my_list[j]
-                        if n == TGT:
-                            result.append(i)
-                            result.append(j)
-                            print(sorted(result))
-                            break
-                    break
-        else:
-            print("Your input is invalid.")
-    else:
-        print("Number outside our bounds.")
-else:
+# Validate and convert TGT
+if not isfloat(TGT):
     print("Your input is invalid.")
+    exit()
+
+TGT = float(TGT)
+if abs(TGT) > 1e9:
+    print("Number outside our bounds.")
+    exit()
+
+# Validate nums
+if not (2 <= len(nums) <= 10**4):
+    print("Your input is invalid.")
+    exit()
+
+my_list = []
+
+for x in nums:
+    if isfloat(x):
+        num = float(x)
+        if num.is_integer():
+            num = int(num)
+    else:
+        print("Your input is invalid.")
+        exit()
+    
+    if abs(num) > 1e9:
+        print("Number outside our bounds.")
+        exit()
+    
+    my_list.append(num)
+
+# Search for a pair of indices
+found = False
+for i in range(len(my_list)):
+    for j in range(i + 1, len(my_list)):
+        if isinstance(TGT, float):
+            if abs(my_list[i] + my_list[j] - TGT) <= 1e-9:
+                print([i, j])
+                found = True
+                break
+        else:
+            if my_list[i] + my_list[j] == TGT:
+                print([i, j])
+                found = True
+                break
+    if found:
+        break
+
+if not found:
+    print("No valid pair found.")
