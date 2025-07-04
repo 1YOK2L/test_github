@@ -1,11 +1,10 @@
 from datetime import date
 
-# Discount rate constants
 class DiscountRate:
-    SERVICE_GOLD = 20  # 20% discount on services for Gold members
-    SERVICE_SILVER = 15  # 15% discount on services for Silver members
-    PRODUCT_GOLD = 10  # 10% discount on products for Gold and Silver members
-    PRODUCT_SILVER = 10  # 10% discount on products for Silver members
+    SERVICE_GOLD = 20
+    SERVICE_SILVER = 15
+    PRODUCT_GOLD = 10
+    PRODUCT_SILVER = 10
 
     @staticmethod
     def get_service_discount(member_type: str):
@@ -13,15 +12,14 @@ class DiscountRate:
             return DiscountRate.SERVICE_GOLD
         elif member_type == "silver":
             return DiscountRate.SERVICE_SILVER
-        return 0  # no discount for non-members
+        return 0
 
     @staticmethod
     def get_product_discount(member_type: str):
         if member_type in ["gold", "silver"]:
             return DiscountRate.PRODUCT_GOLD
-        return 0  # no discount for non-members
+        return 0
 
-# Customer class
 class Customer:
     TYPE_GOLD = "gold"
     TYPE_SILVER = "silver"
@@ -35,7 +33,6 @@ class Customer:
     def __repr__(self):
         return f"[{self.member_type}] {self.name}"
 
-# Visit class
 class Visit:
     def __init__(self, customer: Customer, visit_date: date):
         self.customer = customer
@@ -59,7 +56,6 @@ class Visit:
         service_discount = DiscountRate.get_service_discount(self.customer.member_type)
         product_discount = DiscountRate.get_product_discount(self.customer.member_type)
         
-        # Calculate discounts for services and products
         service_discount_amount = (self.service_expense * service_discount) / 100
         product_discount_amount = (self.product_expense * product_discount) / 100
         
@@ -67,17 +63,13 @@ class Visit:
         return total_discount
 
     def __repr__(self):
-        # Format date as DD/MM/YYYY
         visit_date_str = self.visit_date.strftime("%d/%m/%Y")
         
-        # Calculate total price and discount
         discount = self.total_discount()
         payment = self.gross_price() - discount
         
         return f"{self.customer} - visited on {visit_date_str}, bought {self.total_price()} with a discount of {discount:.1f}, payment {payment:.1f}"
 
-
-# Example usage:
 if __name__ == "__main__":
     john = Customer("John", Customer.TYPE_GOLD)
 
