@@ -74,7 +74,7 @@ class Visit:
         discount = self.total_discount()
         payment = self.gross_price() - discount
         
-        return f"{self.customer} - visited on {visit_date_str} bought {self.total_price()} with discount {discount:.1f} payment {payment:.1f}"
+        return f"{self.customer} - visited on {visit_date_str}, bought {self.total_price()} with a discount of {discount:.1f}, payment {payment:.1f}"
 
 
 # Example usage:
