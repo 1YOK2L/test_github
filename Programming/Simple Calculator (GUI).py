@@ -41,11 +41,11 @@ operations.pack(side = tk.TOP, padx = 5)
 y = tk.Entry(frame)
 y.pack(side = tk.TOP, padx = 5)
 
-submit_button = tk.Button(frame, text="Submit", command=calculator)
+submit_button = tk.Button(frame, text = "Submit", command = calculator)
 submit_button.pack(side = tk.TOP, padx = 5)
 
 result = tk.StringVar()
-result_label = tk.Label(frame, textvariable=result)
+result_label = tk.Label(frame, textvariable = result)
 result_label.pack(side = tk.TOP, padx = 5)
 
 win.mainloop()

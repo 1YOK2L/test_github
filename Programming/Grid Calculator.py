@@ -40,11 +40,11 @@ operations.grid(row = 0, column = 1, padx = 5, pady = 5)
 y = tk.Entry(frame)
 y.grid(row = 0, column = 2, padx = 5, pady = 5)
 
-submit_button = tk.Button(frame, text="Submit", command=calculator)
+submit_button = tk.Button(frame, text = "Submit", command = calculator)
 submit_button.grid(row = 0, column = 3, padx = 5, pady = 5)
 
 result = tk.StringVar()
-result_label = tk.Label(frame, textvariable=result)
+result_label = tk.Label(frame, textvariable = result)
 result_label.grid(row = 1, column = 0, columnspan = 3, padx = 5, pady = 5)
 
 win.mainloop()

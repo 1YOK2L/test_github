@@ -6,7 +6,7 @@ import time
 my_list = [0, 2, 5, 7, 10, 13, 15, 18, 21, 23, 26, 28, 31, 34, 36, 39, 42, 44, 47, 50, 52, 55, 57, 60, 63, 65, 68, 71, 73, 76, 78, 81, 84, 86, 89, 92, 94, 97, 100]
 
 def update(percentage_index):
-    loading.config(text=f"Calculating... ({my_list[percentage_index]}%)")
+    loading.config(text = f"Calculating... ({my_list[percentage_index]}%)")
     if percentage_index < len(my_list) - 1:
         win.after(60, update, percentage_index + 1)
 
@@ -61,13 +61,13 @@ operations.grid(row = 0, column = 1, padx = 5, pady = 5)
 y = tk.Entry(frame)
 y.grid(row = 0, column = 2, padx = 5, pady = 5)
 
-submit_button = tk.Button(frame, text="Submit", command=begin_calculation)
+submit_button = tk.Button(frame, text = "Submit", command = begin_calculation)
 submit_button.grid(row = 0, column = 3, padx = 5, pady = 5)
 
 loading = tk.Label(frame, text = "Calculating...")
 
 result = tk.StringVar()
-result_label = tk.Label(frame, textvariable=result)
+result_label = tk.Label(frame, textvariable = result)
 result_label.grid(row = 1, column = 0, columnspan = 3, padx = 5, pady = 5)
 
 win.mainloop()
