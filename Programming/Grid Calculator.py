@@ -27,25 +27,24 @@ def calculator():
         result.set("Invalid input")
 win = tk.Tk()
 win.title("Calculator")
-win.geometry("2568x2025")
 
 frame = tk.Frame(win)
 frame.pack(pady=20)
 
 x = tk.Entry(frame)
-x.pack(side = tk.TOP, padx = 100)
+x.grid(row = 0, column = 0, sticky = 'w', pady = 2)
 
 operations = ttk.Combobox(frame, values = ["+", "-", "*", "/", "%"])
-operations.pack(side = tk.TOP, padx = 5)
+operations.grid(row = 0, column = 1, sticky = 'w', pady = 2)
 
 y = tk.Entry(frame)
-y.pack(side = tk.TOP, padx = 5)
-
-submit_button = tk.Button(frame, text="Submit", command=calculator)
-submit_button.pack(side = tk.TOP, padx = 5)
+y.grid(row = 0, column = 2, sticky = 'w', pady = 2)
 
 result = tk.StringVar()
 result_label = tk.Label(frame, textvariable=result)
 result_label.pack(side = tk.TOP, padx = 5)
+
+submit_button = tk.Button(frame, text="Submit", command=calculator)
+submit_button.pack(side = tk.TOP, padx = 5)
 
 win.mainloop()
