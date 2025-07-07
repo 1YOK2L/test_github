@@ -26,25 +26,25 @@ def calculator():
     except ValueError:
         result.set("Invalid input")
 win = tk.Tk()
-win.title("Calculator")
+win.title("Simple Calculator")
 
 frame = tk.Frame(win)
-frame.pack(pady=20)
+frame.pack(padx = 20, pady = 20)
 
 x = tk.Entry(frame)
-x.grid(row = 0, column = 0, sticky = 'w', pady = 5)
+x.grid(row = 0, column = 0, sticky = 'w', padx = 5)
 
 operations = ttk.Combobox(frame, values = ["+", "-", "*", "/", "%"])
-operations.grid(row = 0, column = 1, sticky = 'w', pady = 5)
+operations.grid(row = 0, column = 1, sticky = 'w', padx = 5)
 
 y = tk.Entry(frame)
-y.grid(row = 0, column = 2, sticky = 'w', pady = 5)
+y.grid(row = 0, column = 2, sticky = 'w', padx = 5)
 
 submit_button = tk.Button(frame, text="Submit", command=calculator)
-y.grid(row = 0, column = 3, sticky = 'w', pady = 5)
+y.grid(row = 0, column = 3, sticky = 'w', padx = 5)
 
 result = tk.StringVar()
 result_label = tk.Label(frame, textvariable=result)
-result_label.grid(row = 0, column = 4, sticky = 'w', pady = 5)
+result_label.grid(row = 0, column = 4, sticky = 'w', padx = 5)
 
 win.mainloop()

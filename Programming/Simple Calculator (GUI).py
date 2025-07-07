@@ -30,7 +30,7 @@ win.title("Simple Calculator")
 win.geometry("2568x2025")
 
 frame = tk.Frame(win)
-frame.pack(pady=20)
+frame.pack(pady = 20)
 
 x = tk.Entry(frame)
 x.pack(side = tk.TOP, padx = 100)
