@@ -32,19 +32,19 @@ frame = tk.Frame(win)
 frame.pack(pady=20)
 
 x = tk.Entry(frame)
-x.grid(row = 0, column = 0, sticky = 'w', pady = 2)
+x.grid(row = 0, column = 0, sticky = 'w', pady = 5)
 
 operations = ttk.Combobox(frame, values = ["+", "-", "*", "/", "%"])
-operations.grid(row = 0, column = 1, sticky = 'w', pady = 2)
+operations.grid(row = 0, column = 1, sticky = 'w', pady = 5)
 
 y = tk.Entry(frame)
-y.grid(row = 0, column = 2, sticky = 'w', pady = 2)
+y.grid(row = 0, column = 2, sticky = 'w', pady = 5)
 
 submit_button = tk.Button(frame, text="Submit", command=calculator)
-y.grid(row = 0, column = 3, sticky = 'w', pady = 2)
+y.grid(row = 0, column = 3, sticky = 'w', pady = 5)
 
 result = tk.StringVar()
 result_label = tk.Label(frame, textvariable=result)
-result_label.grid(row = 0, column = 4, sticky = 'w', pady = 2)
+result_label.grid(row = 0, column = 4, sticky = 'w', pady = 5)
 
 win.mainloop()

@@ -26,7 +26,7 @@ def calculator():
     except ValueError:
         result.set("Invalid input")
 win = tk.Tk()
-win.title("Calculator")
+win.title("Simple Calculator")
 win.geometry("2568x2025")
 
 frame = tk.Frame(win)
