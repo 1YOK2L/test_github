@@ -5,8 +5,8 @@ def calculator():
     try:
         num1 = float(x.get())
         num2 = float(y.get())
-
         operation = operations.get()
+        
         if operation == "+":
             result.set(num1 + num2)
         elif operation == "-":

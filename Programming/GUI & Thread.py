@@ -1,8 +1,12 @@
 import tkinter as tk
 from tkinter import ttk
+import threading
+import time
 
 def calculator():
     try:
+        time.sleep(3)
+
         num1 = float(x.get())
         num2 = float(y.get())
         operation = operations.get()
