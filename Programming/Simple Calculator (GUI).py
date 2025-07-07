@@ -19,7 +19,10 @@ def calculator():
             except ZeroDivisionError:
                 result.set("Error: num1 cannot be divided by 0")
         elif operation == "%":
-            result.set(num1 % num2)
+            try:
+                result.set(num1 % num2)
+            except ValueError:
+                result.set("Error: cannot find remainder")
     except ValueError:
         result.set("Invalid input")
 win = tk.Tk()
