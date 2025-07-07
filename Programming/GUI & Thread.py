@@ -5,17 +5,16 @@ import time
 
 my_list = [0, 2, 5, 7, 10, 13, 15, 18, 21, 23, 26, 28, 31, 34, 36, 39, 42, 44, 47, 50, 52, 55, 57, 60, 63, 65, 68, 71, 73, 76, 78, 81, 84, 86, 89, 92, 94, 97, 100]
 
-def update(percentage):
-    loading.config(text=f"Calculating... ({my_list[percentage]}%)")
-    if percentage < len(my_list) - 1:
-        win.after(60, update, percentage + 1)
+def update(percentage_index):
+    loading.config(text=f"Calculating... ({my_list[percentage_index]}%)")
+    if percentage_index < len(my_list) - 1:
+        win.after(60, update, percentage_index + 1)
 
 def calculator():
     try:
         time.sleep(3)
 
         num1 = float(x.get())
-        
         num2 = float(y.get())
         operation = operations.get()
 
