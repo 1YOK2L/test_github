@@ -21,8 +21,8 @@ def calculator():
         elif operation == "%":
             try:
                 result.set(num1 % num2)
-            except ValueError:
-                result.set("Error: cannot find remainder")
+            except ZeroDivisionError:
+                result.set("Error: Cannot find remainder")
     except ValueError:
         result.set("Invalid input")
 win = tk.Tk()
