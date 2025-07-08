@@ -178,15 +178,15 @@ def calculator():
             else:
                 result.set("Invalid input - num1 must not be a negative number")
         elif operation == "cone volume":
-            if num1 >= 0:
+            if num1 >= 0 and num2 >= 0:
                 result.set((1/3) * pi * (num1 ** 2) * num2)
             else:
-                result.set("Invalid input - num1 must not be a negative number")
+                result.set("Invalid input - num1 must not be negative numbers")
         elif operation == "oval area":
-            if num1 >= 0:
+            if num1 >= 0 and num2 >= 0:
                 result.set(pi * num1 * num2)
             else:
-                result.set("Invalid input - num1 must not be a negative number")
+                result.set("Invalid input - num1 must not be negative numbers")
         elif operation == "°C to °F and K (num1 only)":
             if num1 >= -273.15:
                 fahrenheit = (1.8 * num1) + 32
