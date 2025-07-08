@@ -34,7 +34,13 @@ def roman_to_integer(x):
         except KeyError:
             print("Not a roman numeral")
     elif len(x) > 15:
-        print("Too long")
+        for j in x:
+            if j not in roman_numerals_dict.keys():
+                print("Not a roman numeral")
+            else:
+                print("Too long")
+            break
+
     elif x == "":
         print("No letters inputted")
 
