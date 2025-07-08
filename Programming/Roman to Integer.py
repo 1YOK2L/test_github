@@ -40,7 +40,6 @@ def roman_to_integer(x):
             else:
                 print("Too long")
             break
-
     elif x == "":
         print("No letters inputted")
 
