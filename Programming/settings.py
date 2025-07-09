@@ -1,7 +1,6 @@
 # settings.py
 DEBUG = True
-SECRET_KEY = 'MySecretKey'
-ROOT_URLCONF = 'hello_world'
+SECRET_KEY = 'YourSecretKeyHere'
 INSTALLED_APPS = [
     'django.contrib.admin',
     'django.contrib.auth',
