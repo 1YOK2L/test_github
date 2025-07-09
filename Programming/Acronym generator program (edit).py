@@ -16,4 +16,5 @@ def acronym(x):
     x = x.split()
     return reduce(lambda acc, word: acc + word[0].upper(), x, "")
 print(acronym("portable network graphics"))
+print(acronym("information technology"))
 print(f"Operation time: {elapsed_time:.10f} seconds")
