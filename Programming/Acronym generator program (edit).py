@@ -1,4 +1,5 @@
 import time
+from functools import *
 
 def measure_time(func):
     def wrapper(*args, **kwargs):
@@ -12,7 +13,7 @@ def measure_time(func):
 
 @measure_time
 def acronym(x):
-    print("".join(map(lambda word: word[0].upper(), x)))
+    return reduce(lambda acc, word: acc + word[0].upper(), x, "")
 
 string = input("Enter a text: ").split()
 acronym(string)
