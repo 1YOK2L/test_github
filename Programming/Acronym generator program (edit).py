@@ -12,9 +12,7 @@ def measure_time(func):
 
 @measure_time
 def acronym(x):
-    for i in range(len(x)):
-        a = (x[i][0]).upper()
-        print(a, end = "")
-    print()
+    print("".join(map(lambda word: word[0].upper(), x)))
+
 string = input("Enter a text: ").split()
 acronym(string)
